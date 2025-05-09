@@ -1,0 +1,41 @@
+module thirtytwobit(
+output [31:0]go,po,input [31:0]g,p
+);
+wire [31:0]gw,pw;
+sixteenbit L0(gw[15:0],pw[15:0],g[15:0],p[15:0]);
+sixteenbit L1(gw[31:16],pw[31:16],g[31:16],p[31:16]);
+assign go[15:0]=gw[15:0];
+assign po[15:0]=pw[15:0];
+assign go[16]=gw[16]|(gw[15]&pw[16]);
+assign go[17]=gw[17]|(gw[15]&pw[17]);
+assign go[18]=gw[18]|(gw[15]&pw[18]);
+assign go[19]=gw[19]|(gw[15]&pw[19]);
+assign go[20]=gw[20]|(gw[15]&pw[20]);
+assign go[21]=gw[21]|(gw[15]&pw[21]);
+assign go[22]=gw[22]|(gw[15]&pw[22]);
+assign go[23]=gw[23]|(gw[15]&pw[23]);
+assign go[24]=gw[24]|(gw[15]&pw[24]);
+assign go[25]=gw[25]|(gw[15]&pw[25]);
+assign go[26]=gw[26]|(gw[15]&pw[26]);
+assign go[27]=gw[27]|(gw[15]&pw[27]);
+assign go[28]=gw[28]|(gw[15]&pw[28]);
+assign go[29]=gw[29]|(gw[15]&pw[29]);
+assign go[30]=gw[30]|(gw[15]&pw[30]);
+assign go[31]=gw[31]|(gw[15]&pw[31]);
+assign po[16]=pw[16]&pw[15];
+assign po[17]=pw[17]&pw[15];
+assign po[18]=pw[18]&pw[15];
+assign po[19]=pw[19]&pw[15];
+assign po[20]=pw[20]&pw[15];
+assign po[21]=pw[21]&pw[15];
+assign po[22]=pw[22]&pw[15];
+assign po[23]=pw[23]&pw[15];
+assign po[24]=pw[24]&pw[15];
+assign po[25]=pw[25]&pw[15];
+assign po[26]=pw[26]&pw[15];
+assign po[27]=pw[27]&pw[15];
+assign po[28]=pw[28]&pw[15];
+assign po[29]=pw[29]&pw[15];
+assign po[30]=pw[30]&pw[15];
+assign po[31]=pw[31]&pw[15];
+endmodule
